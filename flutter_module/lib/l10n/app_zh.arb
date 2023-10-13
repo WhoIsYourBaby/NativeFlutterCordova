@@ -5,6 +5,7 @@
   },
   "modifying": "修改",
   "homeViewTitle": "首页",
-  "mineViewTitle": "Mine",
-  "serviceViewTitle": "Mine"
+  "mineViewTitle": "我的",
+  "serviceViewTitle": "服务",
+  "loginViewTitle": "登录"
 }

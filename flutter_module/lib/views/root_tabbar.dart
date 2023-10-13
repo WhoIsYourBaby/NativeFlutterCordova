@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/mixin/router_mixin.dart';
+import 'package:flutter_module/mixin/route_mixin.dart';
 import 'package:flutter_module/views/home/home_view.dart';
 import 'package:flutter_module/views/mine/mine_view.dart';
 import 'package:flutter_module/views/service/service_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class RootTabBar extends StatefulWidget with RouterMixin {
-  const RootTabBar({super.key});
+class RootTabBar extends StatefulWidget with RouteMixin {
+  const RootTabBar({
+    super.key,
+  });
 
   static const String routeName = "/";
 
@@ -23,6 +25,13 @@ class _RootTabBarState extends State<RootTabBar>
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
+
+    final isLogout = true;
+    if (isLogout) {
+      Future.delayed(Duration(milliseconds: 16)).then((value) {
+        Navigator.pushNamed(context, "/login");
+      });
+    }
   }
 
   @override

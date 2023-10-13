@@ -1,3 +1,3 @@
-mixin RouterMixin {
+mixin RouteMixin {
   static const String routeName = "/";
 }

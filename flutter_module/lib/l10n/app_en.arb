@@ -6,5 +6,6 @@
   "modifying": "modifying",
   "homeViewTitle": "Home",
   "mineViewTitle": "Mine",
-  "serviceViewTitle": "Service"
+  "serviceViewTitle": "Service",
+  "loginViewTitle": "Login"
 }
