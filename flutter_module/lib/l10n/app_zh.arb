@@ -3,5 +3,8 @@
   "@helloWorld": {
     "description": "你好世界的描述"
   },
-  "modifying": "修改"
+  "modifying": "修改",
+  "homeViewTitle": "首页",
+  "mineViewTitle": "Mine",
+  "serviceViewTitle": "Mine"
 }

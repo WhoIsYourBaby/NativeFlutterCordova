@@ -3,5 +3,8 @@
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   },
-  "modifying": "modifying"
+  "modifying": "modifying",
+  "homeViewTitle": "Home",
+  "mineViewTitle": "Mine",
+  "serviceViewTitle": "Service"
 }

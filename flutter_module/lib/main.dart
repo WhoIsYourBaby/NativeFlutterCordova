@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/home_view.dart';
+import 'package:flutter_module/views/home/home_view.dart';
 import 'package:flutter_module/second_view.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_module/utils/route_generater.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: '富家海外',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,18 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case "/":
-            return MaterialPageRoute(
-                builder: (ctx) => MyHomePage(title: '指定路由HomePage'));
-          case "/second":
-            return MaterialPageRoute(builder: (ctx) => SecondView());
-          default:
-            return MaterialPageRoute(
-                builder: (ctx) => MyHomePage(title: '默认路由HomePage'));
-        }
-      },
+      onGenerateRoute: generateRoute,
     );
   }
 }
