@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
-import 'package:flutter_module/bloc/global/global_controller.dart';
+import 'package:flutter_module/bloc/global/locale_controller.dart';
 import 'package:flutter_module/utils/route_generater.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final globalController = GlobalController()..load();
+  final globalController = LocaleController()..load();
   runApp(
     MyApp(
       globalController: globalController,
@@ -16,7 +15,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final GlobalController globalController;
+  final LocaleController globalController;
   const MyApp({
     required this.globalController,
     super.key,

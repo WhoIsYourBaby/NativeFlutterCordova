@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class GlobalController extends ChangeNotifier {
+class LocaleController extends ChangeNotifier {
   Locale? _locale;
   Locale? get locale => _locale;
 
-  GlobalController();
+  LocaleController();
 
   load() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();

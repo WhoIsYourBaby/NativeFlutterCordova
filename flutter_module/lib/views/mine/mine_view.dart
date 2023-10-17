@@ -23,7 +23,9 @@ class _MineViewState extends State<MineView> {
         child: MaterialButton(
           onPressed: () {
             final locale = Locale("zh");
-            GlobalInheritedWidget.of(context)?.controller.updateLocale(locale);
+            GlobalInheritedWidget.of(context)
+                ?.localeController
+                .updateLocale(locale);
           },
           child: Text("change local"),
         ),

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/bloc/global/global_controller.dart';
+import 'package:flutter_module/bloc/global/locale_controller.dart';
 
 class GlobalInheritedWidget extends InheritedWidget {
-  late GlobalController _controller;
-  GlobalController get controller => _controller;
+  late LocaleController _localeController;
+  LocaleController get localeController => _localeController;
   GlobalInheritedWidget({
     Key? key,
-    required GlobalController controller,
+    required LocaleController controller,
     required Widget child,
   }) : super(key: key, child: child) {
-    _controller = controller;
+    _localeController = controller;
   }
 
   static GlobalInheritedWidget? of(BuildContext context) {
@@ -18,6 +18,6 @@ class GlobalInheritedWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(GlobalInheritedWidget oldWidget) {
-    return oldWidget.controller.locale != controller.locale;
+    return false;
   }
 }
