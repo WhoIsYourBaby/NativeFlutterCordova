@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/bloc/global/global_controller.dart';
 
 class GlobalInheritedWidget extends InheritedWidget {
-  final GlobalController controller;
+  late GlobalController _controller;
+  GlobalController get controller => _controller;
   GlobalInheritedWidget({
     Key? key,
-    required this.controller,
+    required GlobalController controller,
     required Widget child,
-  }) : super(key: key, child: child);
+  }) : super(key: key, child: child) {
+    _controller = controller;
+  }
 
   static GlobalInheritedWidget? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<GlobalInheritedWidget>();
@@ -15,7 +18,6 @@ class GlobalInheritedWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(GlobalInheritedWidget oldWidget) {
-    // return oldWidget.locale != locale;
-    return false;
+    return oldWidget.controller.locale != controller.locale;
   }
 }
