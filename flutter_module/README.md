@@ -26,3 +26,8 @@ flutter pub run build_runner build --delete-conflicting-outputs
 持续生成代码
 flutter pub run build_runner watch
 ```
+
+### 安卓集成方式aar
+```
+flutter build aar
+```
