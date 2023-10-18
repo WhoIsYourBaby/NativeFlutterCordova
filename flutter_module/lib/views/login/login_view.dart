@@ -14,13 +14,19 @@ class LoginView extends StatefulWidget with RouteMixin {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.loginViewTitle),
+    return WillPopScope(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(AppLocalizations.of(context)!.loginViewTitle),
+        ),
+        body: Center(
+          child: Text(AppLocalizations.of(context)!.loginViewTitle),
+        ),
       ),
-      body: Center(
-        child: Text(AppLocalizations.of(context)!.loginViewTitle),
-      ),
+      onWillPop: (() async {
+        return false;
+      }),
     );
   }
 }
