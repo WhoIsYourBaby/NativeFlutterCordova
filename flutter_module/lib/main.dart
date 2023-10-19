@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_module/app.dart';
+import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
 import 'package:flutter_module/bloc/global/locale_controller.dart';
-import 'package:flutter_module/utils/route_generater.dart';
 import 'package:flutter_module/views/page404/notfound_view.dart';
 import 'package:flutter_module/views/splash/splash_view.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +29,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    return GlobalInheritedWidget(
+      controller: globalController,
+      child: BlocProvider(
+        create: (ctx) {
+          final cubit = AuthCubit();
+          cubit.loadAuth();
+          return cubit;
+        },
+        child: AnimatedBuilder(
+          animation: globalController,
+          builder: (ctx, child) => AppView(),
+        ),
+      ),
+    );
     return GlobalInheritedWidget(
       controller: globalController,
       child: AnimatedBuilder(

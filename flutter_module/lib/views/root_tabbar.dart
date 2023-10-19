@@ -9,8 +9,8 @@ class RootTabBar extends StatefulWidget {
     super.key,
   });
 
-  static Route route(RouteSettings routeSettings) =>
-      MaterialPageRoute(builder: (context) => const ServiceView());
+  static Route route() =>
+      MaterialPageRoute(builder: (context) => const RootTabBar());
 
   @override
   State<RootTabBar> createState() => _RootTabBarState();
