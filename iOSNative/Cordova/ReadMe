@@ -1,0 +1,16 @@
+
+项目根目录有一个CordovaTemp目录，这是一个完整的cordova项目，可通过cordova命令添加、删除插件，会在platforms/ios下的项目内下载好插件的js和oc文件。
+
+直接将CordovaTemp ios项目内的config.xml、www、Plugins文件引入该项目即可完成cordova配置
+1. config.xml和www是通过reference方式引入
+2. Plugins内的插件oc文件因为需要加入compile source编译，只能通过Create Groups的方式引入，即需要手动将CordovaTemp/platforms/ios/HelloCordova/Plugins目录下的插件包以Create Groups的方式拖入该目录
+3. Cordova的主库是通过cocopods维护的
+
+// 查看已安装插件
+cordova plugin list
+// 安装插件
+cordova plugin add cordova-plugin
+// 删除插件
+cordova plugin remove cordova-plugin
+// 安装指定版本号的插件
+cordova plugin add cordova-plugin-device@1.1.4

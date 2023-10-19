@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '11.0'
+platform :ios, '13.0'
+inhibit_all_warnings!
 
 flutter_application_path = '../flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
@@ -9,12 +10,24 @@ target 'iOSNative' do
   use_frameworks!
 
   # Pods for iOSNative
+  pod 'Cordova',                      '7.0.1'  #如果更新需要和CordovaTemp的cordova环境同步更新
   
   # Pods for flutter
   install_all_flutter_pods(flutter_application_path)
 
 end
 
+
 post_install do |installer|
   flutter_post_install(installer) if defined?(flutter_post_install)
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 13.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      end
+      if config.build_settings['SWIFT_VERSION'].to_f < 5.0
+        config.build_settings['SWIFT_VERSION'] = '5.0'
+      end
+    end
+  end
 end
