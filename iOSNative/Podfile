@@ -10,7 +10,11 @@ target 'iOSNative' do
   use_frameworks!
 
   # Pods for iOSNative
-  pod 'Cordova',                      '7.0.1'  #如果更新需要和CordovaTemp的cordova环境同步更新
+  pod 'SnapKit',                    '5.6.0'
+  pod 'Moya',                       '15.0.0'
+  pod 'HandyJSON',                  '5.0.2'
+  pod 'QMUIKit',                    '4.7.0'
+  pod 'Cordova',                    '7.0.1'  #如果更新需要和CordovaTemp的cordova环境同步更新
   
   # Pods for flutter
   install_all_flutter_pods(flutter_application_path)
