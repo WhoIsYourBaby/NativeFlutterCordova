@@ -9,7 +9,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   final userRepo = UserRepository();
 
-  loadAuth() {
+  syncAuth() {
     Future.delayed(
       Duration(seconds: 1),
       () => emit(AuthState(role: AuthRole.unknown, status: LoginStatus.logout)),

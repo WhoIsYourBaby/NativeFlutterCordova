@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       child: BlocProvider(
         create: (ctx) {
           final cubit = AuthCubit();
-          cubit.loadAuth();
+          cubit.syncAuth();
           return cubit;
         },
         child: AnimatedBuilder(

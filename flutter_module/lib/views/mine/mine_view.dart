@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MineView extends StatefulWidget {
   const MineView({super.key});
@@ -19,16 +21,24 @@ class _MineViewState extends State<MineView> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.mineViewTitle),
       ),
-      body: Center(
-        child: MaterialButton(
-          onPressed: () {
-            final locale = Locale("zh");
-            GlobalInheritedWidget.of(context)
-                ?.localeController
-                .updateLocale(locale);
-          },
-          child: Text("change local"),
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text("切换语言"),
+            onTap: () {
+              final locale = Locale("zh");
+              GlobalInheritedWidget.of(context)
+                  ?.localeController
+                  .updateLocale(locale);
+            },
+          ),
+          ListTile(
+            title: Text("退出登录"),
+            onTap: () {
+              context.read<AuthCubit>().logout();
+            },
+          ),
+        ],
       ),
     );
   }
