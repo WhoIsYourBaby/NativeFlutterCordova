@@ -12,7 +12,7 @@ class AuthCubit extends Cubit<AuthState> {
   loadAuth() {
     Future.delayed(
       Duration(seconds: 1),
-      () => emit(AuthState(role: AuthRole.customer, status: LoginStatus.login)),
+      () => emit(AuthState(role: AuthRole.unknown, status: LoginStatus.logout)),
     );
   }
 
