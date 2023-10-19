@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_module/mixin/route_mixin.dart';
 
-class ServiceView extends StatefulWidget with RouteMixin {
+class ServiceView extends StatefulWidget {
   const ServiceView({super.key});
-
-  static const String routeName = "/service";
 
   static MaterialPageRoute route(RouteSettings routeSettings) =>
       MaterialPageRoute(builder: (context) => const ServiceView());

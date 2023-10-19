@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_module/mixin/route_mixin.dart';
 
-class LoginView extends StatefulWidget with RouteMixin {
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
-
-  static const String routeName = "/login";
 
   static MaterialPageRoute route() =>
       MaterialPageRoute(builder: (context) => const LoginView());

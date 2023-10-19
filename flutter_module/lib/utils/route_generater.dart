@@ -20,8 +20,7 @@ MaterialPageRoute generateRoute(RouteSettings routeSettings) {
 typedef RouteBuilder = Widget Function(RouteSettings routeSettings);
 
 final Map<String, RouteBuilder> routes = <String, RouteBuilder>{
-  RootTabBar.routeName: (RouteSettings routeSettings) => const RootTabBar(),
-  LoginView.routeName: (RouteSettings routeSettings) => const LoginView(),
+  "/": (RouteSettings routeSettings) => const RootTabBar()
 };
 
 T? _argAt<T>(Object? args, int index) {

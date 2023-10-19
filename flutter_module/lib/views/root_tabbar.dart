@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/mixin/route_mixin.dart';
 import 'package:flutter_module/views/home/home_view.dart';
 import 'package:flutter_module/views/mine/mine_view.dart';
 import 'package:flutter_module/views/service/service_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class RootTabBar extends StatefulWidget with RouteMixin {
+class RootTabBar extends StatefulWidget {
   const RootTabBar({
     super.key,
   });
-
-  static const String routeName = "/";
 
   static MaterialPageRoute route(RouteSettings routeSettings) =>
       MaterialPageRoute(builder: (context) => const ServiceView());

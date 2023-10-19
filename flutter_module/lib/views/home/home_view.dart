@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_module/mixin/route_mixin.dart';
 
-class HomeView extends StatefulWidget with RouteMixin {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
-
-  static const String routeName = "/home";
 
   static MaterialPageRoute route() =>
       MaterialPageRoute(builder: (context) => const HomeView());
