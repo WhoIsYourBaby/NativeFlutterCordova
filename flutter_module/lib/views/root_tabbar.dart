@@ -9,7 +9,7 @@ class RootTabBar extends StatefulWidget {
     super.key,
   });
 
-  static MaterialPageRoute route(RouteSettings routeSettings) =>
+  static Route route(RouteSettings routeSettings) =>
       MaterialPageRoute(builder: (context) => const ServiceView());
 
   @override
@@ -25,13 +25,6 @@ class _RootTabBarState extends State<RootTabBar>
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
-
-    final isLogout = true;
-    if (isLogout) {
-      Future.delayed(Duration(milliseconds: 16)).then((value) {
-        Navigator.pushNamed(context, "/login");
-      });
-    }
   }
 
   @override

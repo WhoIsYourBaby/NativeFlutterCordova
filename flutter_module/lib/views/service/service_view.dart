@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ServiceView extends StatefulWidget {
   const ServiceView({super.key});
 
-  static MaterialPageRoute route(RouteSettings routeSettings) =>
+  static Route route(RouteSettings routeSettings) =>
       MaterialPageRoute(builder: (context) => const ServiceView());
 
   @override

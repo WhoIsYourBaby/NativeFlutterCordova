@@ -5,7 +5,7 @@ import 'package:flutter_module/bloc/global/global_inherited.dart';
 class MineView extends StatefulWidget {
   const MineView({super.key});
 
-  static MaterialPageRoute route() =>
+  static Route route() =>
       MaterialPageRoute(builder: (context) => const MineView());
 
   @override

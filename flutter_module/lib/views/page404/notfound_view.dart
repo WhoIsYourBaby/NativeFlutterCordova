@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NotFoundView extends StatelessWidget {
   const NotFoundView({super.key});
 
-  static MaterialPageRoute route(RouteSettings routeSettings) =>
+  static Route route() =>
       MaterialPageRoute(builder: (context) => const NotFoundView());
 
   @override

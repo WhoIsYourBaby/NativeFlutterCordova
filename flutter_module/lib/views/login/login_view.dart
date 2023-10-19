@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
-  static MaterialPageRoute route() =>
+  static Route route() =>
       MaterialPageRoute(builder: (context) => const LoginView());
 
   @override

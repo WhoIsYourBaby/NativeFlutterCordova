@@ -3,6 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
 import 'package:flutter_module/bloc/global/locale_controller.dart';
 import 'package:flutter_module/utils/route_generater.dart';
+import 'package:flutter_module/views/page404/notfound_view.dart';
+import 'package:flutter_module/views/splash/splash_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +47,8 @@ class MyApp extends StatelessWidget {
             ),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
-            onGenerateRoute: generateRoute,
+            onGenerateRoute: (_) => SplashView.route(),
+            onUnknownRoute: (settings) => NotFoundView.route(),
             locale: globalController.locale,
             localeResolutionCallback: (locale, supportedLocales) {
               for (var supportedLocale in supportedLocales) {
