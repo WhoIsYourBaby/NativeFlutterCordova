@@ -5,4 +5,6 @@ part 'locale_state.dart';
 
 class LocaleCubit extends Cubit<Locale> {
   LocaleCubit() : super(const Locale('en'));
+
+  updateLocale(Locale locale) => emit(locale);
 }

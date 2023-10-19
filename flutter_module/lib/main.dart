@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_module/app.dart';
 import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
+import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
 import 'package:flutter_module/bloc/global/locale_controller.dart';
 import 'package:flutter_module/views/page404/notfound_view.dart';
@@ -29,6 +30,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (ctx) {
+            final cubit = AuthCubit();
+            cubit.syncAuth();
+            return cubit;
+          },
+        ),
+        BlocProvider(
+          create: (ctx) => LocaleCubit(),
+        ),
+      ],
+      child: AppView(),
+    );
     return GlobalInheritedWidget(
       controller: globalController,
       child: BlocProvider(

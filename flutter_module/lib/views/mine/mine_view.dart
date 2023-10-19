@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
+import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
 import 'package:flutter_module/bloc/global/global_inherited.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,19 +31,13 @@ class _MineViewState extends State<MineView> {
               children: [
                 MaterialButton(
                   onPressed: () {
-                    final locale = Locale("zh");
-                    GlobalInheritedWidget.of(context)
-                        ?.localeController
-                        .updateLocale(locale);
+                    context.read<LocaleCubit>().updateLocale(Locale("zh"));
                   },
                   child: Text("中文"),
                 ),
                 MaterialButton(
                   onPressed: () {
-                    final locale = Locale("en");
-                    GlobalInheritedWidget.of(context)
-                        ?.localeController
-                        .updateLocale(locale);
+                    context.read<LocaleCubit>().updateLocale(Locale("en"));
                   },
                   child: Text("English"),
                 )
