@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/views/login/login_view.dart';
-import 'package:flutter_module/views/page404/page_notfound.dart';
+import 'package:flutter_module/views/page404/notfound_view.dart';
 import 'package:flutter_module/views/root_tabbar.dart';
 
 MaterialPageRoute generateRoute(RouteSettings routeSettings) {
@@ -11,9 +11,7 @@ MaterialPageRoute generateRoute(RouteSettings routeSettings) {
       if (builder != null) {
         return builder(routeSettings);
       } else {
-        return PageNotFound(
-          routeName: routeSettings.name ?? "/null",
-        );
+        return NotFoundView();
       }
     },
   );

@@ -12,6 +12,9 @@ class RootTabBar extends StatefulWidget with RouteMixin {
 
   static const String routeName = "/";
 
+  static MaterialPageRoute route(RouteSettings routeSettings) =>
+      MaterialPageRoute(builder: (context) => const ServiceView());
+
   @override
   State<RootTabBar> createState() => _RootTabBarState();
 }

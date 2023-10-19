@@ -7,6 +7,9 @@ class LoginView extends StatefulWidget with RouteMixin {
 
   static const String routeName = "/login";
 
+  static MaterialPageRoute route() =>
+      MaterialPageRoute(builder: (context) => const LoginView());
+
   @override
   State<LoginView> createState() => _LoginViewState();
 }

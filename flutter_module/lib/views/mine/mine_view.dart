@@ -8,6 +8,9 @@ class MineView extends StatefulWidget with RouteMixin {
 
   static const String routeName = "/mine";
 
+  static MaterialPageRoute route() =>
+      MaterialPageRoute(builder: (context) => const MineView());
+
   @override
   State<MineView> createState() => _MineViewState();
 }

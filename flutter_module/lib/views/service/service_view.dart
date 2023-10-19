@@ -7,6 +7,9 @@ class ServiceView extends StatefulWidget with RouteMixin {
 
   static const String routeName = "/service";
 
+  static MaterialPageRoute route(RouteSettings routeSettings) =>
+      MaterialPageRoute(builder: (context) => const ServiceView());
+
   @override
   State<ServiceView> createState() => _ServiceViewState();
 }

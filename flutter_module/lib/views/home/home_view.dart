@@ -7,6 +7,9 @@ class HomeView extends StatefulWidget with RouteMixin {
 
   static const String routeName = "/home";
 
+  static MaterialPageRoute route() =>
+      MaterialPageRoute(builder: (context) => const HomeView());
+
   @override
   State<HomeView> createState() => _HomeViewState();
 }
