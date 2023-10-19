@@ -25,12 +25,29 @@ class _MineViewState extends State<MineView> {
         children: [
           ListTile(
             title: Text("切换语言"),
-            onTap: () {
-              final locale = Locale("zh");
-              GlobalInheritedWidget.of(context)
-                  ?.localeController
-                  .updateLocale(locale);
-            },
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                MaterialButton(
+                  onPressed: () {
+                    final locale = Locale("zh");
+                    GlobalInheritedWidget.of(context)
+                        ?.localeController
+                        .updateLocale(locale);
+                  },
+                  child: Text("中文"),
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    final locale = Locale("en");
+                    GlobalInheritedWidget.of(context)
+                        ?.localeController
+                        .updateLocale(locale);
+                  },
+                  child: Text("English"),
+                )
+              ],
+            ),
           ),
           ListTile(
             title: Text("退出登录"),
