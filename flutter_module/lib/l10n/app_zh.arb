@@ -7,5 +7,16 @@
   "homeViewTitle": "首页",
   "mineViewTitle": "我的",
   "serviceViewTitle": "服务",
-  "loginViewTitle": "登录"
+  "loginViewTitle": "登录",
+  "beginUse": "开始使用",
+  "bussinessLogin": "经销商登录",
+  "inputEmailToLogin": "请输入您的电子邮箱以注册或登录",
+  "email": "邮箱",
+  "next": "下一步",
+  "emailVerify": "邮箱验证",
+  "verifyCodeNotify":"输入已发送至以下地址的一次性密码",
+  "ungetVerifyCode":"未收到一次性密码？",
+  "sendNow":"立即发送",
+  "notYourEmail":"这不是您的邮箱？",
+  "changeEmail":"更改邮箱"
 }
