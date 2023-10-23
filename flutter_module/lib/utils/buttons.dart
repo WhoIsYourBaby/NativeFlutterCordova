@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 Widget buildPrimaryButton(
   BuildContext context,
-  String text,
-  VoidCallback onPressed,
-) {
+  String text, [
+  VoidCallback? onPressed,
+]) {
   final ssize = MediaQuery.of(context).size;
   final appconf = context.read<AppconfCubit>();
   final appTheme = appconf.state.appTheme;

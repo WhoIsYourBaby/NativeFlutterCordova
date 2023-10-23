@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/bloc/cubit/appconf/appconf_cubit.dart';
 import 'package:flutter_module/utils/buttons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_module/views/login/login_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginEntryView extends StatelessWidget {
   const LoginEntryView({super.key});
@@ -42,8 +46,31 @@ class LoginEntryView extends StatelessWidget {
                 children: [
                   buildPrimaryButton(
                     context,
-                    "text",
-                    () {},
+                    AppLocalizations.of(context)!.beginUse,
+                    () {
+                      Navigator.push(context, LoginView.route());
+                    },
+                  ),
+                  SizedBox(
+                    height: 36,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/images/arrow_right.png"),
+                      SizedBox(width: 6),
+                      Text(
+                        AppLocalizations.of(context)!.bussinessLogin,
+                        style: TextStyle(
+                          color: context
+                              .read<AppconfCubit>()
+                              .state
+                              .appTheme
+                              .primaryColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
