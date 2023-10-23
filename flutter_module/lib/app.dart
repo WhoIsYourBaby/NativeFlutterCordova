@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
 import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
+import 'package:flutter_module/views/login/login_entry_view.dart';
 import 'package:flutter_module/views/login/login_view.dart';
 import 'package:flutter_module/views/page404/notfound_view.dart';
 import 'package:flutter_module/views/root_tabbar.dart';
@@ -35,7 +36,7 @@ class _AppViewState extends State<AppView> {
                   break;
                 case LoginStatus.logout:
                   _navigator.pushAndRemoveUntil<void>(
-                    LoginView.route(),
+                    LoginEntryView.route(),
                     (route) => false,
                   );
                   break;
