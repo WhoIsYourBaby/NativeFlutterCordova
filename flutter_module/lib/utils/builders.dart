@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module/bloc/cubit/appconf/appconf_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// primary按钮builder
 Widget buildPrimaryButton(
   BuildContext context,
   String text, [
