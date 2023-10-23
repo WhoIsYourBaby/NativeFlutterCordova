@@ -13,6 +13,7 @@ class LoginEntryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appTheme = context.read<AppconfCubit>().state.appTheme;
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
@@ -20,10 +21,25 @@ class LoginEntryView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
-        title: Text(
-          "test",
-          style: TextStyle(color: Colors.black),
-        ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              // TODO 实现更多语言包可切换
+              // context.read<AppconfCubit>().updateLocale(locale);
+            },
+            child: Row(
+              children: [
+                Image.asset("assets/images/language.png"),
+                SizedBox(width: 2),
+                Text(
+                  AppLocalizations.of(context)!.changeLanguage,
+                  style: TextStyle(color: appTheme.normalTextColor),
+                ),
+                SizedBox(width: 14),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -63,11 +79,7 @@ class LoginEntryView extends StatelessWidget {
                       Text(
                         AppLocalizations.of(context)!.bussinessLogin,
                         style: TextStyle(
-                          color: context
-                              .read<AppconfCubit>()
-                              .state
-                              .appTheme
-                              .primaryColor,
+                          color: appTheme.primaryColor,
                         ),
                       ),
                     ],

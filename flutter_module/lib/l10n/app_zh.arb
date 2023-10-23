@@ -18,5 +18,6 @@
   "ungetVerifyCode":"未收到一次性密码？",
   "sendNow":"立即发送",
   "notYourEmail":"这不是您的邮箱？",
-  "changeEmail":"更改邮箱"
+  "changeEmail":"更改邮箱",
+  "changeLanguage":"切换语言"
 }
