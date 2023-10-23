@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
-import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
+import 'package:flutter_module/bloc/cubit/appconf/appconf_cubit.dart';
+import 'package:flutter_module/bloc/cubit/auth/auth_cubit.dart';
 import 'package:flutter_module/views/login/login_entry_view.dart';
-import 'package:flutter_module/views/login/login_view.dart';
 import 'package:flutter_module/views/page404/notfound_view.dart';
 import 'package:flutter_module/views/root_tabbar.dart';
 import 'package:flutter_module/views/splash/splash_view.dart';
@@ -21,7 +20,7 @@ class _AppViewState extends State<AppView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LocaleCubit, Locale?>(builder: (ctx, state) {
+    return BlocBuilder<AppconfCubit, AppconfState>(builder: (ctx, state) {
       return MaterialApp(
         navigatorKey: _navigatorKey,
         builder: (context, child) {
@@ -64,7 +63,7 @@ class _AppViewState extends State<AppView> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         onGenerateRoute: (_) => SplashView.route(),
         onUnknownRoute: (settings) => NotFoundView.route(),
-        locale: state,
+        locale: state.locale,
         localeResolutionCallback: (locale, supportedLocales) {
           for (var supportedLocale in supportedLocales) {
             if (supportedLocale.languageCode == locale?.languageCode) {

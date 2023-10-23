@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
-import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
+import 'package:flutter_module/bloc/cubit/appconf/appconf_cubit.dart';
+import 'package:flutter_module/bloc/cubit/auth/auth_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MineView extends StatefulWidget {
@@ -30,13 +30,13 @@ class _MineViewState extends State<MineView> {
               children: [
                 MaterialButton(
                   onPressed: () {
-                    context.read<LocaleCubit>().updateLocale(Locale("zh"));
+                    context.read<AppconfCubit>().updateLocale(Locale("zh"));
                   },
                   child: Text("中文"),
                 ),
                 MaterialButton(
                   onPressed: () {
-                    context.read<LocaleCubit>().updateLocale(Locale("en"));
+                    context.read<AppconfCubit>().updateLocale(Locale("en"));
                   },
                   child: Text("English"),
                 )

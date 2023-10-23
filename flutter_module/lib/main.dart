@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_module/app.dart';
-import 'package:flutter_module/bloc/cubit/auth/cubit/auth_cubit.dart';
-import 'package:flutter_module/bloc/cubit/locale/locale_cubit.dart';
+import 'package:flutter_module/bloc/cubit/appconf/appconf_cubit.dart';
+import 'package:flutter_module/bloc/cubit/auth/auth_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final LocaleCubit localeCubit = await LocaleCubit.load();
+  final AppconfState appconfState = await AppconfState.load();
   runApp(
     MyApp(
-      localeCubit: localeCubit,
+      appconfCubit: AppconfCubit(appconfState),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final LocaleCubit localeCubit;
+  final AppconfCubit appconfCubit;
   const MyApp({
-    required this.localeCubit,
+    required this.appconfCubit,
     super.key,
   });
 
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             return cubit;
           },
         ),
-        BlocProvider.value(value: localeCubit),
+        BlocProvider.value(value: appconfCubit),
       ],
       child: AppView(),
     );
