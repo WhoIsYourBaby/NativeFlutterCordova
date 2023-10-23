@@ -11,6 +11,7 @@ class LoginEntryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.transparent,
@@ -20,28 +21,35 @@ class LoginEntryView extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Column(
-        children: [
-          Flexible(
-            child: Center(
-              child: Text(
-                "FUJIA",
-                style: TextStyle(fontSize: 48),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/images/login_bkg.png",
+            ),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
+          children: [
+            Flexible(
+              child: Center(
+                child: Image.asset("assets/images/FUJIA.png"),
               ),
             ),
-          ),
-          Flexible(
-            child: Column(
-              children: [
-                buildPrimaryButton(
-                  context,
-                  "text",
-                  () {},
-                ),
-              ],
+            Flexible(
+              child: Column(
+                children: [
+                  buildPrimaryButton(
+                    context,
+                    "text",
+                    () {},
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
